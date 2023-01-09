@@ -166,7 +166,7 @@ class ScraperBot:
 
     def save_data_to_json(self, data, filename):
         self.log(f"Saving data to {filename}",new_line=True)
-        with open(filename, "w") as f:
+        with open(filename, "a") as f:
             json.dump(data,f)
         self.log("Done saving..",new_line=True)
 
