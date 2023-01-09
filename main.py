@@ -173,5 +173,9 @@ class ScraperBot:
 
 if __name__ == "__main__":
     scraper = ScraperBot("Scotland_post_codes_2.xlsx")
-    for postcode in scraper.postcodes[117354:117357]:
-        scraper.get_postcode_addresses(postcode)
+    for postcode in scraper.postcodes[117300:117500]: # Creates 200 requests/threads
+        """ Code to create and start new thread ... """
+        new_thread = threading.Thread(target=scraper.get_postcode_addresses,args=[postcode])
+        new_thread.start()
+
+        # scraper.get_postcode_addresses(postcode)
